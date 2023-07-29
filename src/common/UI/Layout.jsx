@@ -1,10 +1,10 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
-import { Header } from "./Header";
+import Header from "./Header";
 
 function Layout() {
   return (
-    <Box background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,57,121,1) 35%, rgba(0,212,255,1) 100%)">
+    <Box background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(203,238,190,1) 0%, rgba(191,255,248,1) 63%)">
       <Header />
       <Flex
         direction="column"

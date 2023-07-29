@@ -1,47 +1,39 @@
 import {
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
-  Divider,
+  CardHeader,
   Heading,
   Image,
-  Stack,
   Text,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-function MovieCard() {
+function MovieCard({ id, title, poster, overview }) {
   return (
-    <Card maxW="sm">
-      <CardBody>
+    <Card borderRadius={30} bg="rgb(255,255,255)" shadow="2xl">
+      <CardHeader pb={0}>
         <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="Green double couch with wooden legs"
+          m="auto"
+          src={poster}
+          alt={`${title}'s poster`}
           borderRadius="lg"
+          mb={2}
         />
-        <Stack mt="6" spacing="3">
-          <Heading size="md">Living room Sofa</Heading>
-          <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design
-            with a sprinkle of vintage design.
-          </Text>
-          <Text color="blue.600" fontSize="2xl">
-            $450
-          </Text>
-        </Stack>
+      </CardHeader>
+      <CardBody minH={130}>
+        <Heading size={"sm"} pb={2}>
+          {title}
+        </Heading>
+        <Text color={"gray.700"}>{overview.substring(0, 50) + "..."}</Text>
       </CardBody>
-      <Divider />
-      <CardFooter>
-        <ButtonGroup spacing="2">
-          <Button variant="solid" colorScheme="blue">
-            Buy now
+      <CardFooter pt={2}>
+        <Link to={`/movies/${id}`} style={{ width: "100%" }}>
+          <Button m={"auto"} bgColor={"green.300"} color={"white"} w={"100%"}>
+            View joke & more
           </Button>
-          <Button variant="ghost" colorScheme="blue">
-            Add to cart
-          </Button>
-        </ButtonGroup>
+        </Link>
       </CardFooter>
     </Card>
   );
