@@ -17,5 +17,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "warn",
   },
 };
