@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link, useParams } from "react-router-dom";
-import { data } from "./data";
+
 import { MOVIEDB_IMAGES_URL } from "src/common/UI/constants";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useSelector } from "react-redux";

@@ -23,6 +23,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ruleAdded, ruleRemoved } from "./aiJokesSlice";
 
+// setting the initial form state for repetitive uses
 const initialFormState = { name: "", description: "" };
 
 function JokesSettings() {
@@ -32,6 +33,7 @@ function JokesSettings() {
 
   const handleRuleRemove = (ruleName) => {
     if (!ruleName) return;
+    //dispatch the action with the action creator returned from the slice
     dispatch(ruleRemoved(ruleName));
   };
 
