@@ -21,15 +21,14 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ruleAdded, ruleRemoved } from "./aiJokesSlice";
-import { Form } from "react-router-dom";
+import { ruleAdded, ruleRemoved, selectRules } from "./aiJokesSlice";
 
 // setting the initial form state for repetitive uses
 const initialFormState = { name: "", description: "" };
 
 function JokesSettings() {
   const dispatch = useDispatch();
-  const rules = useSelector((state) => state.aiJokes.rules);
+  const rules = useSelector(selectRules);
   const [form, setForm] = useState(initialFormState);
 
   const handleRuleRemove = (ruleName) => {
