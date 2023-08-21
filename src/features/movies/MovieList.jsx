@@ -5,7 +5,7 @@ import { Flex, Heading, SimpleGrid, Spinner, useToast } from "@chakra-ui/react";
 import { MOVIEDB_IMAGES_URL } from "src/common/UI/constants";
 import {
   fetchMovies,
-  selectAllMovies,
+  selectAll,
   selectMoviesError,
   selectMoviesStatus,
 } from "./moviesSlice";
@@ -13,7 +13,7 @@ import {
 function MovieList() {
   const dispatch = useDispatch();
   const toast = useToast();
-  const movies = useSelector(selectAllMovies);
+  const movies = useSelector(selectAll);
   const moviesStatus = useSelector(selectMoviesStatus);
   const moviesError = useSelector(selectMoviesError);
 

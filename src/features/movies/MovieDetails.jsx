@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import {
+  Badge,
   Box,
   Card,
   CardBody,
@@ -14,11 +15,11 @@ import {
 import JokesGenerator from "src/features/ai-jokes/JokesGenerator";
 import { MOVIEDB_IMAGES_URL } from "src/common/UI/constants";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { selectMovieById } from "./moviesSlice";
+import { selectById } from "./moviesSlice";
 
 function MovieDetails() {
   const { movieId } = useParams();
-  const movie = useSelector((state) => selectMovieById(state, movieId));
+  const movie = useSelector((state) => selectById(state, movieId));
 
   return (
     <div>
@@ -48,7 +49,12 @@ function MovieDetails() {
           <Stack>
             <CardBody>
               <Heading size="md">{movie.title}</Heading>
-
+              <Text py="2" color="gray.600">
+                Rating:
+                <Badge mr={2} bg={"green.100"}>
+                  {movie?.vote_average}
+                </Badge>
+              </Text>
               <Text py="2">{movie.overview}</Text>
             </CardBody>
 

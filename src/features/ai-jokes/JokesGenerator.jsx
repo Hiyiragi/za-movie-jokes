@@ -30,15 +30,15 @@ function JokesGenerator({ movieId, movieDescription, movieTitle }) {
   return (
     <Flex direction="column" gap={4} width="100%">
       {joke && (
-        <Text mb={2} fontWeight="bold" fontSize="md">
+        <Flex align="center" mb={2} fontWeight="bold" fontSize="md">
           <Badge fontSize="0,9em" colorScheme="green" mr={1}>
             Joke:
           </Badge>
-          <Text as="span">{joke.joke}</Text>
-        </Text>
+          <Text as="span">{joke}</Text>
+        </Flex>
       )}
       <Button
-        isLoading={jokeStatus === "Loading"}
+        isLoading={jokeStatus === "loading"}
         variant="solid"
         bg="green.300"
         color="white"
