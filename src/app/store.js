@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import aiJokesSlice from "src/features/ai-jokes/aiJokesSlice";
-import moviesSlice from "src/features/movies/moviesSlice";
+import { moviesApi } from "src/features/movies/moviesApi";
 
 export const store = configureStore({
   reducer: {
-    movies: moviesSlice,
+    [moviesApi.reducerPath]: moviesApi.reducer,
     aiJokes: aiJokesSlice,
   },
+  middleware: (getDefaultMiddleWare) =>
+    getDefaultMiddleWare().concat(moviesApi.middleware),
 });
