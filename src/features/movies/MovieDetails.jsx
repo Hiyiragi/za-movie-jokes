@@ -71,7 +71,7 @@ function MovieDetails() {
   } else if (isError) {
     content = (
       <Flex align="center" justify="center">
-        {error?.data?.status_message ?? "Something went wrong"}
+        {error}
       </Flex>
     );
   }
